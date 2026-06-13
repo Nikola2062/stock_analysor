@@ -1,0 +1,42 @@
+
+=== Stability check: 0700.HK (HK), 5 runs, persist=False ===
+
+[run 1/5] starting…
+[run 1/5] done in 89.2s  P(dd≥15%)=0.250  tactical=None  DA=veto
+[run 2/5] starting…
+[run 2/5] done in 86.1s  P(dd≥15%)=0.300  tactical=None  DA=pass_with_concerns
+[run 3/5] starting…
+2026-06-02 22:22:25,126 WARNING src.agents.price_map — Price Map LLM output failed validation: current_price 481.6000061035156 not inside its zone [470.52, 480.0] — using deterministic fallback.
+[run 3/5] done in 88.0s  P(dd≥15%)=0.280  tactical=None  DA=veto
+[run 4/5] starting…
+[run 4/5] done in 318.1s  P(dd≥15%)=0.200  tactical=None  DA=veto
+[run 5/5] starting…
+[run 5/5] done in 88.3s  P(dd≥15%)=0.200  tactical=None  DA=veto
+
+Raw snapshots written to: /Users/sweden/Desktop/Pandora/Projects/stock_analysier/data/stability_check_0700_HK_20260602T202936Z.json
+
+=== Summary (5/5 successful, total 669.7s) ===
+
+Numeric metrics (variance across runs):
+  p_dd_10                      mean=   0.4100  stdev=  0.0490  min=   0.3500  max=   0.4500  span=  0.1000  ( 24.4% of |mean|)
+  p_dd_15                      mean=   0.2460  stdev=  0.0408  min=   0.2000  max=   0.3000  span=  0.1000  ( 40.7% of |mean|)
+  p_dd_20                      mean=   0.1300  stdev=  0.0310  min=   0.1000  max=   0.1800  span=  0.0800  ( 61.5% of |mean|)
+  p_dd_25                      mean=   0.0680  stdev=  0.0194  min=   0.0500  max=   0.1000  span=  0.0500  ( 73.5% of |mean|)
+  intrinsic_low                mean= 380.0000  stdev= 24.4949  min= 350.0000  max= 400.0000  span= 50.0000  ( 13.2% of |mean|)
+  intrinsic_base               mean= 510.0000  stdev= 26.8328  min= 480.0000  max= 550.0000  span= 70.0000  ( 13.7% of |mean|)
+  intrinsic_high               mean= 640.0000  stdev= 37.4166  min= 600.0000  max= 700.0000  span=100.0000  ( 15.6% of |mean|)
+  margin_of_safety_pct         mean=   5.8970  stdev=  5.5716  min=  -0.3322  max=  14.2027  span= 14.5349  (246.5% of |mean|)
+  fwd_expected_return_pct      mean=   3.5880  stdev=  3.9152  min=  -1.9726  max=   8.0980  span= 10.0706  (280.7% of |mean|)
+  fwd_prob_weighted_target     mean= 498.8800  stdev= 18.8554  min= 472.1000  max= 520.6000  span= 48.5000  (  9.7% of |mean|)
+  quality_score                mean=   8.0000  stdev=  0.0000  min=   8.0000  max=   8.0000  span=  0.0000  (  0.0% of |mean|)
+  da_finding_count             mean=   4.0000  stdev=  0.6325  min=   3.0000  max=   5.0000  span=  2.0000  ( 50.0% of |mean|)
+
+Categorical metrics (distribution across runs):
+  tactical_level               None×5
+  tactical_label               None×5
+  if_not_held_rec              'WAIT_FOR_PRICE'×5
+  da_verdict                   'veto'×4, 'pass_with_concerns'×1
+  moat_strength                'wide'×5
+
+P(dd≥15%) span across runs: 0.100
+→ ✓  Low variance. The deterministic ladder has a stable input.

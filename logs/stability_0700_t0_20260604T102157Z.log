@@ -1,0 +1,41 @@
+
+=== Stability check: 0700.HK (HK), 5 runs, persist=False ===
+
+[run 1/5] starting…
+[run 1/5] done in 100.2s  P(dd≥15%)=0.300  tactical=None  DA=veto
+[run 2/5] starting…
+[run 2/5] done in 91.4s  P(dd≥15%)=0.280  tactical=None  DA=veto
+[run 3/5] starting…
+[run 3/5] done in 209.6s  P(dd≥15%)=0.300  tactical=None  DA=veto
+[run 4/5] starting…
+[run 4/5] done in 90.7s  P(dd≥15%)=0.250  tactical=None  DA=veto
+[run 5/5] starting…
+[run 5/5] done in 85.1s  P(dd≥15%)=0.280  tactical=None  DA=pass_with_concerns
+
+Raw snapshots written to: /Users/sweden/Desktop/Pandora/Projects/stock_analysier/data/stability_check_0700_HK_20260604T083136Z.json
+
+=== Summary (5/5 successful, total 576.9s) ===
+
+Numeric metrics (variance across runs):
+  p_dd_10                      mean=   0.4500  stdev=  0.0000  min=   0.4500  max=   0.4500  span=  0.0000  (  0.0% of |mean|)
+  p_dd_15                      mean=   0.2820  stdev=  0.0183  min=   0.2500  max=   0.3000  span=  0.0500  ( 17.7% of |mean|)
+  p_dd_20                      mean=   0.1560  stdev=  0.0224  min=   0.1200  max=   0.1800  span=  0.0600  ( 38.5% of |mean|)
+  p_dd_25                      mean=   0.0840  stdev=  0.0150  min=   0.0600  max=   0.1000  span=  0.0400  ( 47.6% of |mean|)
+  intrinsic_low                mean= 356.0000  stdev= 12.0000  min= 350.0000  max= 380.0000  span= 30.0000  (  8.4% of |mean|)
+  intrinsic_base               mean= 500.0000  stdev=  0.0000  min= 500.0000  max= 500.0000  span=  0.0000  (  0.0% of |mean|)
+  intrinsic_high               mean= 644.0000  stdev= 12.0000  min= 620.0000  max= 650.0000  span= 30.0000  (  4.7% of |mean|)
+  margin_of_safety_pct         mean=   8.9325  stdev=  0.0000  min=   8.9325  max=   8.9325  span=  0.0000  (  0.0% of |mean|)
+  fwd_expected_return_pct      mean=   5.5120  stdev=  0.5377  min=   4.8148  max=   6.1438  span=  1.3290  ( 24.1% of |mean|)
+  fwd_prob_weighted_target     mean= 484.3000  stdev=  2.4682  min= 481.1000  max= 487.2000  span=  6.1000  (  1.3% of |mean|)
+  quality_score                mean=   8.0000  stdev=  0.0000  min=   8.0000  max=   8.0000  span=  0.0000  (  0.0% of |mean|)
+  da_finding_count             mean=   3.6000  stdev=  1.0198  min=   2.0000  max=   5.0000  span=  3.0000  ( 83.3% of |mean|)
+
+Categorical metrics (distribution across runs):
+  tactical_level               None×5
+  tactical_label               None×5
+  if_not_held_rec              'WAIT_FOR_PRICE'×5
+  da_verdict                   'veto'×4, 'pass_with_concerns'×1
+  moat_strength                'wide'×5
+
+P(dd≥15%) span across runs: 0.050
+→ ✓  Low variance. The deterministic ladder has a stable input.
